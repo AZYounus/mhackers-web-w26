@@ -40,7 +40,7 @@ body {
     color: var(--gray_blue);
 }
 
-.playlist_stats{
+.playlist_stats {
     color: var(--gray);
     font-weight: 400;
 }
