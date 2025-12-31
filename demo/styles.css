@@ -1,0 +1,54 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* define variables */
+:root {
+    --dark_blue: #0B294D;
+    --mid_blue: #11335A;
+    --light_blue: #4CA3E5;
+    --white: #FFFFFF;
+    --gray_blue: #cbd8e6;
+    --gray: #dedede;
+}
+
+/* make background blue, font white */
+body {
+    background-color: var(--mid_blue);
+    color: var(--white);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+/* drop shadow: refer to https://www.joshwcomeau.com/css/designing-shadows/ */
+#playlist_photo {
+    width: 10vw;
+    box-shadow:
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+/* set title to custom font, include accessible back up fonts */
+#playlist_title {
+    font-family: 'Titillium Web', Verdana, Tahoma, sans-serif;
+    font-weight: 700;
+}
+
+.playlist_description > li {
+    color: var(--gray_blue);
+}
+
+.playlist_stats{
+    color: var(--gray);
+    font-weight: 400;
+}
+
+.playlist_songs > li {
+    color: var(--gray);
+}
+
+.playlist_songs > li > h4, .playlist_songs > li > h5 {
+    font-weight: 400;
+}

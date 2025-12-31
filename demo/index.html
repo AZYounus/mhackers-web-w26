@@ -3,29 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <title>Audiofi</title>
 </head>
 <body>
-    <img src="album_image.png" alt="image of four album covers" />
-    <p>Private Playlist</p>
-    <h1>Go Out On A Chewsday</h1>
-    <ul>
+    <img id="playlist_photo" src="album_image.png" alt="image of four album covers" />
+    <p id="playlist_visibility">Private Playlist</p>
+    <h1 id="playlist_title">Go Out On A Chewsday</h1>
+    <ul class="playlist_description">
         <li>Zohra Sin</li>
         <li>1 save</li>
         <li>2026 songs, about 6072 hours</li>
     </ul>
     <hr>
-    <ul>
+    <ul class="playlist_stats">
         <li>#</li>
         <li>Title</li>
         <li>Album</li>
         <li>Duration</li>
     </ul>
     <hr>
-    <ol>
-        <li>Ever Seen by beadobee | This Is How Tomorrow Moves | 3:23</li>
-        <li>Strawberry Milk by zeph | crush (demos) | 0:50</li>
-        <li>Dope Lovers by DPR Ian | Moodswings In This Order | 3:20</li>
+    <ol class="playlist_songs">
+        <li>
+            <h4>Ever Seen</h4>
+            <h5>beadobee | This Is How Tomorrow Moves | 3:23</h5>
+        </li>
+        <li>
+            <h4>Strawberry Milk</h4>
+            <h5>zeph | crush (demos) | 0:50</h5>
+        </li>
+        <li>
+            <h4>Dope Lovers</h4>
+            <h5>DPR Ian | Moodswings In This Order | 3:20</h5>
+        </li>
     </ol>
+    <i class="fa fa-fast-backward"></i>
+    <i class="fa fa-pause"></i>
+    <i class="fa fa-play"></i>
+    <i class="fa fa-fast-forward"></i>
 </body>
 </html>
