@@ -12,11 +12,151 @@
     --gray: #dedede;
 }
 
+/* reset styling to include padding in width/height */
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--black1);
+}
+
 /* make background blue, font white */
 body {
-    background-color: var(--mid_blue);
+    background-color: black;
     color: var(--white);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+/* flex container to hold the two views */
+.background_container {
+    display: flex;
+}
+
+/***** STYLING DEVICE *****/
+/* create blue rounded rectangle with remaining width of page */
+.device_container {
+    margin: 30px 15px 80px 0;
+    background-color: var(--mid_blue);
+    width: calc(100% - 600px);
+    border-radius: 8px;
+    position: relative;
+}
+
+/* create small white box offset from .device_container */
+.device_container_box-1 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 500px;
+    background-color: var(--gray);
+    border-radius: 8px;
+}
+
+/* create larger white box offset from .device_container for aesthetics */
+.device_container_box-2 {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 885px;
+    background-color: var(--gray);
+    border-radius: 8px;
+}
+
+/* create blue rectangle to hold actual screen and buttons in, offset from .device_container */
+.device_container_box-3 {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    width: calc(100% - 70px);
+    height: 855px;
+    background-color: #1b304a;
+    border-radius: 8px;
+}
+
+/* create black container for .screen_glass */
+.screen_container {
+    margin: 7.5px;
+    height: 300px;
+    width: calc(100% - 15px);
+    background-color: black;
+    border-radius: 4px;
+}
+
+/* create container for the actual display to go */
+.screen_glass {
+    margin: 1px 20px;
+    height: 300px;
+    width: calc(100% - 40px);
+    background-color: #7f97a9;
+    border-radius: 4px;
+}
+
+/* flex container to align buttons on x and y axis */
+.device_btn_groups {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* stylizing actual button icons to standard height, width */
+.device_btn {
+    width: 40px;
+    padding: 10px;
+    height: 40px;
+}
+
+/* set height of left group container */
+.device_left_group {
+    position: relative;
+    height: 80px;
+}
+
+/* offset pm group from .device_left_group */
+.pm_container {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* offset lr group from .device_left_group */
+.lr_container {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    gap: 5px;
+}
+
+/* flex container for middle buttons */
+.device_middle_group {
+    display: flex;
+}
+
+/* flex column container for right buttons */
+.device_right_group {
+    display: flex;
+    flex-direction: column;
+}
+
+/***** STYLING LEFT PLAYLIST *****/
+/* create background container for the left stuff */
+.playlist_container {
+    margin: 30px 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--mid_blue);
+    margin-bottom: 80px;
+    width: 600px;
+}
+
+/* align two flex items on x axis */
+.playlist_header_container {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    padding-bottom: 5px;
 }
 
 /* drop shadow: refer to https://www.joshwcomeau.com/css/designing-shadows/ */
@@ -36,19 +176,43 @@ body {
     font-weight: 700;
 }
 
-.playlist_description > li {
+.playlist_description {
+    list-style: none;
+    display: flex;
+    gap: 5px;
     color: var(--gray_blue);
 }
 
-.playlist_stats {
-    color: var(--gray);
-    font-weight: 400;
+th {
+    text-align: left;
 }
 
-.playlist_songs > li {
+/* make dot appear before any list item with a previous list item */
+.playlist_description li + li::before {
+  content: "•";
+  margin-right: 5px; /* or smaller if you want */
+}
+
+.playlist_songs h4 {
+    font-weight: 400;
+    color: var(--white);
+}
+
+.playlist_stats h5, .playlist_songs h5 {
+    font-weight: 400;
     color: var(--gray);
 }
 
-.playlist_songs > li > h4, .playlist_songs > li > h5 {
-    font-weight: 400;
+/* create flex container to align music controls on x and y */
+footer {
+    display: flex;
+    gap: 10px;
+    background-color: var(--dark_blue);
+    height: 90px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
 }
