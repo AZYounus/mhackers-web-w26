@@ -12,11 +12,30 @@
     --gray: #dedede;
 }
 
-/* make background blue, font white */
+/* reset styling to include padding in width/height calculations */
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--black1);
+}
+
+/* blue page background, white font by default */
 body {
-    background-color: var(--mid_blue);
+    background-color: black;
     color: var(--white);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+/***** STYLING LEFT PLAYLIST *****/
+/* medium sized blue background container to hold playlist information */
+.playlist_container {
+    margin: 30px 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--mid_blue);
+    margin-bottom: 80px;
+    width: 600px;
 }
 
 /* drop shadow: refer to https://www.joshwcomeau.com/css/designing-shadows/ */
@@ -36,19 +55,33 @@ body {
     font-weight: 700;
 }
 
-.playlist_description > li {
-    color: var(--gray_blue);
+/* left-align text in table headers */
+th {
+    text-align: left;
 }
 
-.playlist_stats {
-    color: var(--gray);
+/* make dot appear 5px (marign-right) before any list item with a previous list item */
+.playlist_description li + li::before {
+  content: "•";
+  margin-right: 5px; /* or smaller if you want */
+}
+
+/* white text in playlist table */
+.playlist_songs h4 {
     font-weight: 400;
+    color: var(--white);
 }
 
-.playlist_songs > li {
+/* grey text in playlist table */
+.playlist_stats h5, .playlist_songs h5 {
+    font-weight: 400;
     color: var(--gray);
 }
 
-.playlist_songs > li > h4, .playlist_songs > li > h5 {
-    font-weight: 400;
+/* blue footer that takes up full screen width */
+footer {
+    background-color: var(--dark_blue);
+    height: 90px;
+    width: 100vw;
+    font-size: 24px;
 }
