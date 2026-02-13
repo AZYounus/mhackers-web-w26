@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --mid_blue: #11335A;
+    --gray_blue: #cbd8e6;
+}
+
+body {
+    background-color: var(--mid_blue);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.playlist_songs h5 {
+    color: var(--gray_blue);
+}
