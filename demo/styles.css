@@ -1,0 +1,159 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* define variables */
+:root {
+    --dark_blue: #0B294D;
+    --mid_blue: #11335A;
+    --light_blue: #4CA3E5;
+    --white: #FFFFFF;
+    --gray_blue: #cbd8e6;
+    --gray: #dedede;
+}
+
+/* reset styling to include padding in width/height calculations */
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--black1);
+}
+
+/* blue page background, white font by default */
+body {
+    background-color: black;
+    color: var(--white);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.background_container {
+    display: flex;
+    flex-direction: row;
+}
+
+/***** STYLING RIGHT SIDE ******/
+.device_container {
+    margin: 30px 15px;
+    border-radius: 8px;
+    background-color: var(--mid_blue);
+    width: calc(100% - 600px);
+    height: 1200px;
+    position: relative;
+}
+
+.device_container_box-1 {
+    background-color: var(--gray);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 500px;
+    border-radius: 8px;
+}
+
+.device_container_box-2 {
+    background-color: var(--gray);
+    position: absolute;
+    top: 455px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 700px;
+    border-radius: 8px;
+}
+
+.device_container_box-3 {
+    background-color: var(--dark_blue);
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    width: calc(100% - 70px);
+    height: 1000px;
+    border-radius: 8px;
+}
+
+.screen_container {
+    background-color: black;
+    margin: 7.5px;
+    height: 300px;
+    width: calc(100% - 15px);
+    border-radius: 8px;
+}
+
+.screen_glass {
+    background-color: var(--light_blue);
+    margin: 1px 20px;
+    height: 100%;
+    width: calc(100% - 40px);
+}
+
+.device_btn_groups {
+    display: flex;
+}
+
+/***** STYLING LEFT PLAYLIST *****/
+/* medium sized blue background container to hold playlist information */
+.playlist_container {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 30px 15px;
+    width: 600px;
+    background-color: var(--mid_blue);
+}
+
+/* .playlist_container {
+    margin: 30px 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--mid_blue);
+    margin-bottom: 80px;
+    width: 600px;
+} */
+
+/* drop shadow: refer to https://www.joshwcomeau.com/css/designing-shadows/ */
+#playlist_photo {
+    width: 10vw;
+    box-shadow:
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+/* set title to custom font, include accessible back up fonts */
+#playlist_title {
+    font-family: 'Titillium Web', Verdana, Tahoma, sans-serif;
+    font-weight: 700;
+}
+
+/* left-align text in table headers */
+th {
+    text-align: left;
+}
+
+/* make dot appear 5px (marign-right) before any list item with a previous list item */
+.playlist_description li + li::before {
+  content: "•";
+  margin-right: 5px; /* or smaller if you want */
+}
+
+/* white text in playlist table */
+.playlist_songs h4 {
+    font-weight: 400;
+    color: var(--white);
+}
+
+/* grey text in playlist table */
+.playlist_stats h5, .playlist_songs h5 {
+    font-weight: 400;
+    color: var(--gray);
+}
+
+/* blue footer that takes up full screen width */
+/* footer {
+    background-color: var(--dark_blue);
+    height: 90px;
+    width: 100vw;
+    font-size: 24px;
+} */
