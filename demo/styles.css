@@ -89,6 +89,39 @@ body {
 
 .device_btn_groups {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* stylizing actual button icons to standard height, width */
+.device_btn {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+
+.device_left_group {
+    position: relative;
+    height: 80px;
+}
+
+.pm_container {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lr_container {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.device_right_group {
+    display: flex;
+    flex-direction: column;
 }
 
 /***** STYLING LEFT PLAYLIST *****/
@@ -99,16 +132,8 @@ body {
     margin: 30px 15px;
     width: 600px;
     background-color: var(--mid_blue);
+    margin-bottom: 100px;
 }
-
-/* .playlist_container {
-    margin: 30px 15px;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: var(--mid_blue);
-    margin-bottom: 80px;
-    width: 600px;
-} */
 
 /* drop shadow: refer to https://www.joshwcomeau.com/css/designing-shadows/ */
 #playlist_photo {
@@ -151,9 +176,15 @@ th {
 }
 
 /* blue footer that takes up full screen width */
-/* footer {
+footer {
     background-color: var(--dark_blue);
     height: 90px;
     width: 100vw;
     font-size: 24px;
-} */
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
