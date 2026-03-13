@@ -13,9 +13,30 @@ table.addEventListener('click', e => {
 
 function fetchYoutubeVideo(query)
 {
-    const url = `https://www.googleapis.com/youtube/v3/videos/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=1&key=${API_KEY}`;
-
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=1&key=${API_KEY}`;
     fetch(url)
         .then(response => response.json())
-        .then(data => console.log("got here", data))
+        .then(data => {
+            if (data.items.length > 0) {
+                const videoId = data.items[0].id.videoId;
+                displayVideo(videoId);
+            } else {
+                console.log("No video found");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+}
+
+function displayVideo(videoId)
+{
+    const videoContainer = document.getElementById("videoContainer");
+    const screenContainer = videoContainer.parentElement.parentElement;
+
+    videoContainer.innerHTML = `
+    <iframe width="${screenContainer.offsetWidth}" height="${screenContainer.offsetHeight}"
+        src="https://www.youtube.com/embed/${videoId}?origin=http://localhost:8000"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+    `;
 }
