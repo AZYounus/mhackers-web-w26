@@ -12,7 +12,7 @@
     --gray: #dedede;
 }
 
-/* reset styling to include padding in width/height */
+/* reset styling to include padding in width/height calculations */
 *, body {
     padding: 0;
     margin: 0;
@@ -20,82 +20,73 @@
     background-color: var(--black1);
 }
 
-/* make background blue, font white */
+/* blue page background, white font by default */
 body {
     background-color: black;
     color: var(--white);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
-/* flex container to hold the two views */
 .background_container {
     display: flex;
+    flex-direction: row;
 }
 
-
-/***** STYLING DEVICE *****/
-/* create blue rounded rectangle with remaining width of page */
+/***** STYLING RIGHT SIDE ******/
 .device_container {
-    margin: 30px 15px 80px 0;
+    margin: 30px 15px;
+    border-radius: 8px;
     background-color: var(--mid_blue);
     width: calc(100% - 600px);
-    border-radius: 8px;
+    height: 1200px;
     position: relative;
 }
 
-/* create small white box offset from .device_container */
 .device_container_box-1 {
+    background-color: var(--gray);
     position: absolute;
     top: 15px;
     left: 15px;
     width: calc(100% - 30px);
     height: 500px;
-    background-color: var(--gray);
     border-radius: 8px;
 }
 
-/* create larger white box offset from .device_container for aesthetics */
 .device_container_box-2 {
+    background-color: var(--gray);
     position: absolute;
-    top: 15px;
+    top: 455px;
     left: 20px;
     width: calc(100% - 40px);
-    height: 885px;
-    background-color: var(--gray);
+    height: 700px;
     border-radius: 8px;
 }
 
-/* create blue rectangle to hold actual screen and buttons in, offset from .device_container */
 .device_container_box-3 {
+    background-color: var(--dark_blue);
     position: absolute;
     top: 30px;
     left: 35px;
     width: calc(100% - 70px);
-    height: 855px;
-    background-color: #1b304a;
+    height: 1000px;
     border-radius: 8px;
 }
 
-/* create black container for .screen_glass */
 .screen_container {
+    background-color: black;
     margin: 7.5px;
     height: 300px;
     width: calc(100% - 15px);
-    background-color: black;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
-/* create container for the actual display to go */
 .screen_glass {
+    background-color: var(--light_blue);
     margin: 1px 20px;
-    height: 300px;
+    height: 100%;
     width: calc(100% - 40px);
-    background-color: #7f97a9;
-    border-radius: 4px;
-    position: relative;
 }
 
-/* flex container to align buttons on x and y axis */
 .device_btn_groups {
     display: flex;
     justify-content: space-between;
@@ -105,17 +96,15 @@ body {
 /* stylizing actual button icons to standard height, width */
 .device_btn {
     width: 40px;
-    padding: 10px;
     height: 40px;
+    padding: 10px;
 }
 
-/* set height of left group container */
 .device_left_group {
     position: relative;
     height: 80px;
 }
 
-/* offset pm group from .device_left_group */
 .pm_container {
     position: absolute;
     left: 20px;
@@ -123,42 +112,27 @@ body {
     flex-direction: column;
 }
 
-/* offset lr group from .device_left_group */
 .lr_container {
-    display: flex;
     position: absolute;
     top: 20px;
+    display: flex;
     gap: 5px;
 }
 
-/* flex container for middle buttons */
-.device_middle_group {
-    display: flex;
-}
-
-/* flex column container for right buttons */
 .device_right_group {
     display: flex;
     flex-direction: column;
 }
 
 /***** STYLING LEFT PLAYLIST *****/
-/* create background container for the left stuff */
+/* medium sized blue background container to hold playlist information */
 .playlist_container {
-    margin: 30px 15px;
     padding: 10px;
     border-radius: 8px;
-    background-color: var(--mid_blue);
-    margin-bottom: 80px;
+    margin: 30px 15px;
     width: 600px;
-}
-
-/* align two flex items on x axis */
-.playlist_header_container {
-    display: flex;
-    align-items: flex-end;
-    gap: 15px;
-    padding-bottom: 5px;
+    background-color: var(--mid_blue);
+    margin-bottom: 100px;
 }
 
 /* drop shadow: refer to https://www.joshwcomeau.com/css/designing-shadows/ */
@@ -178,74 +152,39 @@ body {
     font-weight: 700;
 }
 
-.playlist_description {
-    list-style: none;
-    display: flex;
-    gap: 5px;
-    color: var(--gray_blue);
-}
-
+/* left-align text in table headers */
 th {
     text-align: left;
 }
 
-/* make dot appear before any list item with a previous list item */
+/* make dot appear 5px (marign-right) before any list item with a previous list item */
 .playlist_description li + li::before {
   content: "•";
   margin-right: 5px; /* or smaller if you want */
 }
 
+/* white text in playlist table */
 .playlist_songs h4 {
     font-weight: 400;
     color: var(--white);
 }
 
+/* grey text in playlist table */
 .playlist_stats h5, .playlist_songs h5 {
     font-weight: 400;
     color: var(--gray);
 }
 
-/* create flex container to align music controls on x and y */
+/* blue footer that takes up full screen width */
 footer {
-    display: flex;
-    gap: 10px;
     background-color: var(--dark_blue);
     height: 90px;
-    position: fixed;
-    bottom: 0;
     width: 100vw;
     font-size: 24px;
+    display: flex;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-}
-
-.videoContainer
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* make any embedded iframe fill the video container */
-.videoContainer iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
-/* highlight the active row by adding a border to its cells */
-.active_song td {
-    background-color: var(--light_blue);
-}
-
-/* ensure table borders show up when we style rows */
-#playlist {
-    border-collapse: separate;
-    border-spacing: 0;
+    position: fixed;
+    bottom: 0;
 }
