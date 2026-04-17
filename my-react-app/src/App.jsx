@@ -3,6 +3,7 @@ import './App.css'
 import SongTable from './SongTable'
 
 function App() {
+  const [videoId, setVideoId] = useState(null);
 
   return (
     <>
@@ -11,13 +12,13 @@ function App() {
             <img src="/album_image.png" alt="image of four album covers" />
             <p>Private Playlist</p>
             <h1>Go Out On A Chewsday</h1>
-            <ul>
-              <li>Zohra Sin</li>
-              <li>1 save</li>
-              <li>2026 songs, about 6072 hours</li>
+            <ul className="playlist_description">
+                <li><span>Zohra Sin</span></li>
+                <li><span>1 save</span></li>
+                <li><span>2026 songs, about 6072 hours</span></li>
             </ul>
             <hr></hr>
-            <SongTable />
+            <SongTable onVideoFound={setVideoId}/>
         </div>
 
         <div className="device_container">
@@ -26,7 +27,15 @@ function App() {
           <div className="device_container_box-3">
             <div className="screen_container">
               <div className="screen_glass">
-                <div id="videoContainer" className="videoContainer"></div>
+                <div id="videoContainer" className="videoContainer">
+                  {videoId && (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}?origin=http://localhost:3000`}
+                      frameBorder="0"
+                      allowFullScreen
+                    />
+                  )}
+                </div>
               </div>
             </div>
             <div className="device_btn_groups">

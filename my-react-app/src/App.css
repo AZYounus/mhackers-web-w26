@@ -124,6 +124,26 @@ body {
     flex-direction: column;
 }
 
+.videoContainer
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* make any embedded iframe fill the video container */
+.videoContainer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 /***** STYLING LEFT PLAYLIST *****/
 /* medium sized blue background container to hold playlist information */
 .playlist_container {
@@ -157,6 +177,13 @@ th {
     text-align: left;
 }
 
+.playlist_description {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    color: var(--gray_blue);
+}
+
 /* make dot appear 5px (marign-right) before any list item with a previous list item */
 .playlist_description li + li::before {
   content: "•";
@@ -173,6 +200,10 @@ th {
 .playlist_stats h5, .playlist_songs h5 {
     font-weight: 400;
     color: var(--gray);
+}
+
+.active_song td {
+    background-color: var(--light_blue);
 }
 
 /* blue footer that takes up full screen width */

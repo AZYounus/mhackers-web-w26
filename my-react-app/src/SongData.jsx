@@ -1,9 +1,9 @@
-function SongData({title, author, album, duration})
+function SongData({index, title, author, album, duration, onClick})
 {
     return(
         <>
-            <tr>
-                <td><h4>1</h4></td>
+            <tr onClick={() => onClick(`${title} ${author}`)}>
+                <td><h4>{index}</h4></td>
                 <td>
                     <h4 className="song_title">{title}</h4>
                     <h5 className="song_author">{author}</h5>
